@@ -8,10 +8,12 @@ use strict;
 use warnings;
 
 our $scenario = {
-    summary => 'Benchmark startup overhead of JSON::Decode::Regexp',
+    summary => 'Benchmark startup overhead of JSON::Decode::Regexp vs some other modules',
     module_startup => 1,
     participants => [
         {module=>'JSON::Decode::Regexp'},
+
+        {module=>'Regexp::Grammars'},
     ],
     #datasets => [
     #],
