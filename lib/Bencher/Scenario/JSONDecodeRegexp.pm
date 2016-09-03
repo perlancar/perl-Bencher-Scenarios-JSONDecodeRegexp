@@ -8,11 +8,13 @@ use strict;
 use warnings;
 
 our $scenario = {
-    summary => 'Benchmark from_json()',
+    summary => 'Benchmark JSON decoding',
     participants => [
         {
-            #name => 'from_json',
             fcall_template => 'JSON::Decode::Regexp::from_json(<data>)',
+        },
+        {
+            fcall_template => 'JSON::PP::decode_json(<data>)',
         },
     ],
     datasets => [
