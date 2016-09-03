@@ -1,0 +1,35 @@
+SYNOPSIS
+
+     use JSON::Decode::Regexp qw(from_json);
+     my $data = from_json(q([1, true, "a", {"b":null}]));
+
+DESCRIPTION
+
+    This module is a packaging of Randal L. Schwartz' code (with minor
+    modification) originally posted at:
+
+     http://perlmonks.org/?node_id=995856
+
+    The code is licensed "just like Perl".
+
+FUNCTIONS
+
+ from_json($str) => DATA
+
+    Decode JSON in $str. Dies on error.
+
+FAQ
+
+ How does this module compare to other JSON modules on CPAN?
+
+    This module is rather slower than JSON::PP, does not support Unicode,
+    and does not pinpoint exact location on parse error. But it is a cool
+    hack and demonstrates the power of Perl regular expressions. It does
+    not require any non-core module. It requires Perl 5.10 at the minimum
+    because it utilizes regex features like named capture and recursive
+    pattern.
+
+SEE ALSO
+
+    JSON, JSON::PP, JSON::XS, JSON::Tiny.
+
