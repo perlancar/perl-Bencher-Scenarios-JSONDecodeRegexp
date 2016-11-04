@@ -14,10 +14,14 @@ our $scenario = {
             fcall_template => 'JSON::Decode::Regexp::from_json(<data>)',
         },
         {
-            fcall_template => 'JSON::PP::decode_json(<data>)',
+            module => 'JSON::PP',
+            function => 'decode',
+            code_template => 'state $json = JSON::PP->new->allow_nonref; $json->decode(<data>)',
         },
     ],
     datasets => [
+        {name => 'str-a'   , args=>{data=>'"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345\f\r\b\t\r"'},
+         summary => "a 100-character string with some escape sequences"},
         {name => 'array0'  , args=>{data=>'[]'}},
         {name => 'array1'  , args=>{data=>'[1]'}},
         {name => 'array10' , args=>{data=>'[1,2,3,4,5,6,7,8,9,10]'}},
