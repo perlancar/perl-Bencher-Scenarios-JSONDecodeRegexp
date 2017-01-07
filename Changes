@@ -1,5 +1,3 @@
-Revision history for Bencher-Scenarios-JSONDecodeRegexp
-
 0.002   2016-11-04 (PERLANCAR)
 
 	- Add dataset: str-a (100-char string with some escape sequences).
