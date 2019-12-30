@@ -18,6 +18,11 @@ our $scenario = {
             function => 'decode',
             code_template => 'state $json = JSON::PP->new->allow_nonref; $json->decode(<data>)',
         },
+        {
+            module => 'JSON::Parser::Regexp',
+            function => 'Json_Parse',
+            code_template => 'JSON::Parser::Regexp->new->Json_Parse(<data>)',
+        },
     ],
     datasets => [
         {name => 'str-a'   , args=>{data=>'"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345\f\r\b\t\r"'},
